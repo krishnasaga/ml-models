@@ -1,0 +1,8 @@
+from modals import BugClassifier
+from data import feature_preprocessor,main
+import numpy
+clf = BugClassifier.BugClassifier()
+
+a = clf.fit(numpy.apply_along_axis(feature_preprocessor.label_encoder.transform,1,[["YOUR FLIGHTS","SEAT OPTIONS","NONE","SPECIAL ASSESTANCE","NONE"]]),main.getLabels)
+
+print(a)
