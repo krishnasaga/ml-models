@@ -1,1 +1,3 @@
+import data
+
 print("Hello")
