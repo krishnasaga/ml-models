@@ -1,3 +1,4 @@
+from data.database import getTrainingData
 def main():
   print("Hello")
 
