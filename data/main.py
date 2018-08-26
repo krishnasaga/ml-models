@@ -9,3 +9,6 @@ def getTransformedData():
 def getLabels():
   data = database.getTrainingData()
   return data[:,0]
+
+def main():
+  print(__name__)
