@@ -1,2 +1,1 @@
-
-print("Hello {} ".format("H"))
+import modals
