@@ -1,3 +1,2 @@
-import feature_preprocessor
 
-print("Hello")
+print("Hello {} ".format("H"))
