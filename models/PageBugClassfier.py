@@ -1,5 +1,5 @@
 from sklearn import tree
-from data import preprocessing
+from data import processing
 ##Classfy the bugs by looking at the page not by going deep into each feature
 class PageBugClassfier:
 
@@ -7,16 +7,24 @@ class PageBugClassfier:
       self.classfier = tree.DecisionTreeClassifier()
 
     def __encodeFeatureLabels(data,d):
-        encodedData = preprocessing.encodeFeatureLabels(data)
+        encodedData = processing.encodeFeatureLabels(data)
         return encodedData
 
     ##Accept a two dymentional array of strings ( categorical data )
     def fit(self,trainingData):
-        encodedTrainingData = self.__encodeFeatureLabels(trainingData)
-        self.classfier.fit(encodedTrainingData,["one"])
+
+        ##extracting and encoding labels
+        labels = processing.extractFeatueLabels(trainingData)
+
+        ##extracting and decodeing data
+        ##this extracting is just removing first column ( feature labels )
+        extractedTrainingData = processing.extractData(trainingData)
+        encodedTrainingData = processing.encodeData(extractedTrainingData)
+
+        self.classfier.fit(encodedTrainingData,labels)
 
     ##Accept a two dymentional array of strings ( categorical data )
     def predict(self,testData):
-        encodedTestData = self.__encodeFeatureLabels(trainingData)
-        predictions = self.calssfier.predict(encodedTestData)
+        encodedTestData = processing.encodeData(testData)
+        predictions = self.classfier.predict(encodedTestData)
         return predictions
