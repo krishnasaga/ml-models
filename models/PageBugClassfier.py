@@ -1,5 +1,11 @@
 from sklearn import tree
 from data import processing
+import numpy as np
+
+class Predection:
+    def __init__(self,answer):
+        self.answer = answer
+
 ##Classfy the bugs by looking at the page not by going deep into each feature
 class PageBugClassfier:
 
@@ -25,6 +31,12 @@ class PageBugClassfier:
 
     ##Accept a two dymentional array of strings ( categorical data )
     def predict(self,testData):
+        encodedTestData = processing.encodeData(testData)
+        predictions = self.classfier.predict(encodedTestData)
+        return np.vectorize(Predection)(predictions)
+
+    ##Predections score
+    def score(self,testData):
         encodedTestData = processing.encodeData(testData)
         predictions = self.classfier.predict(encodedTestData)
         return predictions
