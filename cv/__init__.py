@@ -1,1 +1,1 @@
-from SectionDetector import SectionDetector
+from RectangleDetector import RectangleDetector

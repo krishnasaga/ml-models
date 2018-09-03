@@ -1,10 +1,12 @@
-import cv2
+import cv2 as opencv
+from cv import RectangleDetector
 
-image = cv2.imread('./someimage.jpg')
+image = opencv.imread('./cvio/input/1.png')
 
-ret,thresh = cv2.threshold(image,127,255,0)
-contours,hierarchy = cv2.findContours(thresh, 1, 2)
+rectangleDetector = RectangleDetector()
+rectangles,thresh = rectangleDetector.detect(image);
 
-cv2.imshow('Hello, World!',image)
+outputimage = opencv.drawContours(image, rectangles, -1, (0,255,0), 3)
 
-cv2.waitKey(33)
+opencv.imwrite('./cvio/output/1.png',outputimage)
+opencv.imwrite('./cvio/output/2.png',thresh)
