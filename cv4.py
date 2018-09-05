@@ -1,4 +1,5 @@
 import cv2 as opencv
+import sys
 from cv import RectangleDetector
 
 scriptName = sys.argv[0]
