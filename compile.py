@@ -6,4 +6,4 @@ templateDetect.setTemplates(os.getcwd()+'/')
 
 matches = templateDetect.detect(os.getcwd() +'/')
 
-print(matches[0].position)
+print(matches[0].feature.name)

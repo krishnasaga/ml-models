@@ -10,8 +10,9 @@ class Feature:
     self.template = template
 
 class Match:
-  def __init__(self,match,position):
+  def __init__(self,match,position,feature):
     self.match = match
+    self.feature = feature
     self.position = position
 
 def readFeatureTemplate(path):
@@ -32,7 +33,7 @@ def getFeatureMatchOfGivenScreenShot(feature,screenShot):
   w, h = feature.template.shape[::-1]
   res = cv.matchTemplate(screenShot,feature.template,cv.TM_CCORR_NORMED)
   min_val, max_val, min_loc, max_loc = cv.minMaxLoc(res)
-  return Match(1,[[max_loc[0],max_loc[1]],[max_loc[0] + w, max_loc[1] + h]])
+  return Match(1,[[max_loc[0],max_loc[1]],[max_loc[0] + w, max_loc[1] + h]],feature)
 
 def getAllMatcheingFeaturesInAGivenScreenShot(features,screenShot):
   screenShotImage = cv.imread(screenShot,cv.IMREAD_GRAYSCALE)
