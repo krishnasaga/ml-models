@@ -1,1 +1,3 @@
 from RectangleDetector import RectangleDetector
+from TemplateDetect import TemplateDetect
+from Collect import CVCollector
