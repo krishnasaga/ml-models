@@ -1,8 +1,9 @@
 import os
 from cv import CVCollector
 
-cvcollector = CVCollector(os.getcwd()+'/ml-models',os.getcwd()+'/ml-models')
+cvcollector = CVCollector(os.getcwd()+'/templ/',os.getcwd()+'/cvio/input/')
 
 results = cvcollector.collect()
 
-print(results)
+print(results[1][0].position)
+ 
