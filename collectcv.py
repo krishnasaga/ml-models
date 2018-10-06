@@ -18,9 +18,6 @@ cvcollector = CVCollector(trainingPath,screenshotsPath)
 
 results = cvcollector.collect()
 
-print({ "position": results[1][0].position[0] })
-
-
 #stash them in elasticsearch
 docs = map( lambda result: {
   "features": map(lambda feature: feature.position,result)
