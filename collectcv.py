@@ -20,7 +20,7 @@ results = cvcollector.collect()
 
 #stash them in elasticsearch
 docs = map( lambda result: {
-  "features": map(lambda feature: feature.position,result)
+  "features": map(lambda feature: { "position": feature.position },result)
 },results)
 print(docs)
 
