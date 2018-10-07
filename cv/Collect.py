@@ -16,4 +16,5 @@ class CVCollector:
 
   def collect(self):
     screenshotPaths = getAllScreenshotsInPath(self.screenshotsPath)
-    return map(self.templateDetect.detect,screenshotPaths)
+    return map( lambda ssPath: { "senario": ssPath, "features": self.templateDetect.detect(ssPath) },screenshotPaths)
+ 
