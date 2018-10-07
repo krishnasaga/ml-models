@@ -1,3 +1,3 @@
 from FeatureAccesser import FeatureAccesser
 import processing
-from FeatureDiff import diffFeatures
+import FeatureDiff
