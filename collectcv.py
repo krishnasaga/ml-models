@@ -17,7 +17,7 @@ if(os.environ.get('DOMAIN_COMPILER_HOME') is None):
 with open(os.environ['DOMAIN_COMPILER_HOME']+'/config.json') as f:
     config = json.load(f)
 
-#screen shot details
+#screenshot details
 trainingPath = config["trainingPath"]
 screenshotsPath = config["screenshotsPath"]
 
