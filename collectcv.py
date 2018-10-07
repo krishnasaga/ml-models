@@ -7,7 +7,7 @@ import sys
 import json
 
 #low budget code to read command line args
-arg_names = ['commithash']
+arg_names = ['programname','commithash']
 args = dict(zip(arg_names, sys.argv))
 
 #read configuratin from json
@@ -29,6 +29,7 @@ host = 'localhost'
 
 #Git data from command line args
 commithash = args['commithash']
+print(commithash)
 
 cvcollector = CVCollector(trainingPath,screenshotsPath)
 
