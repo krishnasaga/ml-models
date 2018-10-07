@@ -31,6 +31,7 @@ host = 'localhost'
 commithash = args['commithash']
 print(commithash)
 
+#collect computer vision data from screenshots
 cvcollector = CVCollector(trainingPath,screenshotsPath)
 
 results = cvcollector.collect()
