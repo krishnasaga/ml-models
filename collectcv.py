@@ -37,7 +37,7 @@ cvcollector = CVCollector(trainingPath,screenshotsPath)
 results = cvcollector.collect()
 
 #stash them in elasticsearch
-docs = map(lambda result: { "senario": result["senario"],"features": map(lambda f: {
+docs = map(lambda result: { "commithash": commithash, "senario": result["senario"],"features": map(lambda f: {
   "name": f.feature.name,
   "position": f.position
 },result["features"]) },results)
