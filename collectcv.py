@@ -13,6 +13,7 @@ args = dict(zip(arg_names, sys.argv))
 #read configuratin from json
 if(os.environ.get('DOMAIN_COMPILER_HOME') is None):
   print('You have to set DOMAIN_COMPILER_HOME first')
+  exit(1)
 
 with open(os.environ['DOMAIN_COMPILER_HOME']+'/config.json') as f:
     config = json.load(f)
